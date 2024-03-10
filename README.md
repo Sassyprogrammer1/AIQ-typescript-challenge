@@ -30,5 +30,7 @@ For a faster response use the browser to load the responses instead of the swagg
 For e.g
 
 [http://localhost:3018/power-plants/top?count=10](http://localhost:3018/power-plants/top?count=10)
+
 [http://localhost:3018/power-plants/state/stats?state=ak](http://localhost:3018/power-plants/state/stats?state=ak)
+
 [http://localhost:3018/power-plants/state?state=ak](http://localhost:3018/power-plants/state?state=ak)
