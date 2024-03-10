@@ -12,6 +12,13 @@ export class CountryPowerPlants extends AbstractPowerPlant implements ICountryPo
     super(countryJsonPath);
   }
 
+  /**
+   * @description
+   * reads data from the country powerplants sheet and
+   * returns the countries annualNetGen
+   * @param string
+   * @returns Promise<PowerPlantResponseObject>
+   */
   async absoluteAnnualNetGeneration(): Promise<number> {
     const data = await this.getData();
     if (data && data.length > 0) {

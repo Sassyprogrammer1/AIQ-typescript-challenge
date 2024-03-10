@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 
+// read the file as a stream
 export function readFileAsStream(filePath: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const readStream = fs.createReadStream(filePath, {encoding: 'utf8'});

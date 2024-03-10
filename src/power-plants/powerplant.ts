@@ -13,26 +13,44 @@ export class PowerPlant extends AbstractPowerPlant implements IPowerPlant {
     super(plantsJsonPath);
   }
 
+  /**
+   * @description
+   * reads data from the powerplants sheet and filters
+   * the power plants by annualNetGenaration in descending order
+   * @param number
+   * @returns Promise<PowerPlantResponseObject>
+   */
   async filterTopNPlants(topN: number): Promise<PowerPlantResponseObject> {
     const data = await this.getData();
     if (data && data.length > 0) {
       const annualNetGenerationKey = this.annualNetGenerationKey;
-      const sortedPlants = data.sort((a, b) => (b[annualNetGenerationKey] as number) - (a[annualNetGenerationKey] as number)).slice(0, topN);
+      const sortedPlants = data
+        .sort((a, b) => (b[annualNetGenerationKey] as number) - (a[annualNetGenerationKey] as number))
+        .slice(0, topN);
       return sortedPlants;
     }
     throw new CustomError('No data for Power Plants found');
   }
 
+  /**
+   * @description
+   * reads data from the powerplants sheet and filters
+   * the power plants by state
+   * @param string
+   * @returns Promise<PowerPlantResponseObject>
+   */
   async filterPlantsByState(state: string): Promise<PowerPlantResponseObject> {
     const data = await this.getData();
     if (data && data.length > 0) {
       const stateAbrv = this.stateAbrv;
       const filteredPlants: PowerPlantResponseObject = [];
+      // filter powerplants by federal state
       for (const plant of data) {
         if (plant[`${stateAbrv}`] === state) {
           filteredPlants.push(plant);
         }
       }
+      // check no state case
       if (filteredPlants.length === 0) {
         throw new CustomError('state not found!');
       }
