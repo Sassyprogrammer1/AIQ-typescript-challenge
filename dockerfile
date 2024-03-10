@@ -13,6 +13,9 @@ RUN yarn install
 # Copy the rest of the application code to the working directory
 COPY . .
 
+# Create the src/data-files folder
+RUN mkdir -p src/data-files
+
 # Build the Nest application
 RUN yarn build
 
