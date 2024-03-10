@@ -1,3 +1,0 @@
-yarn install
-
-yarn development
