@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  power_plants_service:
+    image: '${IMAGE_NAME:-power_plants_service}:${IMAGE_TAG:-latest}'
+    container_name: '${CONTAINER_NAME:-power_plants}'
+    build:
+      context: .
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - '${PORT:-3018}:3000'
+    restart: 'unless-stopped'
+    volumes:
+      - ./:/usr/src
+    networks:
+      - nodejs_service_network
+
+networks:
+  nodejs_service_network:
+    name: nodejs_service_network
