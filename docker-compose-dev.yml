@@ -5,7 +5,7 @@ services:
     container_name: '${CONTAINER_NAME:-power_plants}'
     build:
       context: .
-      dockerfile: ./Dockerfile.dev
+      dockerfile: ./dockerfile
     ports:
       - '${PORT:-3018}:3000'
     restart: 'unless-stopped'
