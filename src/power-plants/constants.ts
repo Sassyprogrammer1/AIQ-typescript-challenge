@@ -1,0 +1,10 @@
+export const PLANTS_STATE_ABBREVIATION_KEY = 'Plant state abbreviation';
+export const STATE_ABBREVIATION_KEY = 'State abbreviation';
+export const PLANTS_ANNUAL_NET_GENERATION_KEY = 'Plant annual net generation (MWh)';
+export const PLANTS_NAME = 'Plant name';
+export const STATES_ABSOLUTE_ANNUAL_NET_GENERATION_KEY = 'State annual net generation (MWh)';
+export const USA_ABSOLUTE_ANNUAL_NET_GENERATION_KEY = 'U.S. annual net generation (MWh)';
+export const STATE_POWER_PLANTS_JSON = 'src/data-files/state_power_plants_data.json';
+export const POWER_PLANTS_JSON = 'src/data-files/power_plants_data.json';
+export const COUNTRY_POWER_PLANTS_JSON = 'src/data-files/country_power_plants_data.json';
+export const FILE_PATHS = [POWER_PLANTS_JSON, STATE_POWER_PLANTS_JSON, COUNTRY_POWER_PLANTS_JSON];
