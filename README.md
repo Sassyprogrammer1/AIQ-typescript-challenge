@@ -8,6 +8,7 @@ The challenge has been solved in the following way:
 1. The excel sheets file is parsed at the time of bootstrapping.
 2. There is an abstract class which takes the file path and returns the respective sheet to the concrete class
 3. Three sheets have been used in this challenge.
+
    a. PLNT21: To get the power plants data as individual units. This sheet's data will be used to get Top N plants by the annual net generation and to get the plants that belong to a specific state.
 
    b. ST21: To get the cumulative annual net generation of the state. As in this sheet each row represents a different state data. This data will be used to calculate the absolute annual net gen value of a state
