@@ -9,7 +9,9 @@ The challenge has been solved in the following way:
 2. There is an abstract class which takes the file path and returns the respective sheet to the concrete class
 3. Three sheets have been used in this challenge.
    a. PLNT21: To get the power plants data as individual units. This sheet's data will be used to get Top N plants by the annual net generation and to get the plants that belong to a specific state.
+
    b. ST21: To get the cumulative annual net generation of the state. As in this sheet each row represents a different state data. This data will be used to calculate the absolute annual net gen value of a state
+
    c. US21: To get the cumulative annual net generation of all states which means the country. This value will be used to calculate the percentage of a state out of all the states.
 
 ## Startup
@@ -18,10 +20,11 @@ The utility function parseSheet will be called during the bootstraping of the pr
 
 The following one command will make the api accesable to be used.
 
-```bash
-$ make run-project
+```
+make run-project
 ```
 
+[Note]: First time when you spin up the container it might take a few minutes as it parses the sheets and
 once the container has been spun up please access the swagger api playground from the following address.
 
 `localhost:3018/api`
